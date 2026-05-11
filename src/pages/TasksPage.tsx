@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { App, Button, Card, Flex, Space, Typography } from 'antd';
 import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import { useAppDispatch } from '@/store/hooks';
@@ -20,22 +20,22 @@ export default function TasksPage() {
   const [editingTask, setEditingTask] = useState<Task | null>(null);
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
-  const openAdd = () => {
+  const openAdd = useCallback(() => {
     setEditingTask(null);
     setModalOpen(true);
-  };
+  }, []);
 
-  const openEdit = (task: Task) => {
+  const openEdit = useCallback((task: Task) => {
     setEditingTask(task);
     setModalOpen(true);
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setModalOpen(false);
     setEditingTask(null);
-  };
+  }, []);
 
-  const handleBulkDelete = () => {
+  const handleBulkDelete = useCallback(() => {
     if (selectedRowKeys.length === 0) return;
     modal.confirm({
       title: `Xoá ${selectedRowKeys.length} task đã chọn?`,
@@ -49,7 +49,7 @@ export default function TasksPage() {
         setSelectedRowKeys([]);
       },
     });
-  };
+  }, [selectedRowKeys, dispatch, modal, message]);
 
   return (
     <Flex vertical gap="middle">

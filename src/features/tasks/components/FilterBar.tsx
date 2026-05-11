@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import {
   Button,
   Col,
@@ -25,7 +25,7 @@ import { useDebounce } from "@/hook/useDebounce";
 const { RangePicker } = DatePicker;
 const { Text } = Typography;
 
-export default function FilterBar() {
+function FilterBar() {
   const dispatch = useAppDispatch();
   const filters = useAppSelector(selectFilters);
 
@@ -138,3 +138,5 @@ export default function FilterBar() {
     </Row>
   );
 }
+
+export default memo(FilterBar);
