@@ -2,7 +2,7 @@
 
 Ứng dụng quản lý công việc
 ## DEEPLOY trên vercel
-https://test-fe-dao-sy-cuong.vercel.app/dashboard
+test-fe-dao-sy-cuong-git-main-cuong-a.vercel.app
 
 ## Tech stack
 
