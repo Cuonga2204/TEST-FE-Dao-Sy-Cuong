@@ -1,6 +1,8 @@
 # TaskBoard — Frontend Test
 
 Ứng dụng quản lý công việc
+## DEEPLOY trên vercel
+https://test-fe-dao-sy-cuong.vercel.app/dashboard
 
 ## Tech stack
 
@@ -18,7 +20,4 @@
 ```bash
 npm install
 npm run dev      # dev server tại http://localhost:5173
-npm run build    # build production
-npm run preview  # preview build
-npm run type-check
 ```
